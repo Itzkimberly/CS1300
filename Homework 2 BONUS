@@ -1,0 +1,39 @@
+"""
+Palindrome Checker - Bonus
+CS1300 HW2 - Bonus
+"""
+
+def is_palindrome(text):
+    """
+    Check if text is a palindrome (case-insensitive, ignores spaces).
+    """
+    # Remove spaces and convert to lowercase
+    cleaned = text.replace(" ", "").lower()
+    
+    # Compare with reverse
+    return cleaned == cleaned[::-1]
+
+
+# Test the function
+test_cases = [
+    "Racecar",
+    "A man a plan a canal Panama",
+    "Hello",
+    "Was it a car or a cat I saw"
+]
+
+print("=" * 40)
+print("       PALINDROME CHECKER")
+print("=" * 40)
+
+for test in test_cases:
+    result = "Palindrome" if is_palindrome(test) else "Not a palindrome"
+    print(f'"{test}"')
+    print(f"  → {result}\n")
+
+# Interactive version
+user_input = input("Enter a word or phrase to check: ")
+if is_palindrome(user_input):
+    print("✓ This IS a palindrome!")
+else:
+    print("✗ This is NOT a palindrome.")

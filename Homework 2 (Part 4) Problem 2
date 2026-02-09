@@ -1,0 +1,31 @@
+"""
+Text Analyzer
+CS1300 HW2 - Problem 2
+"""
+
+# Get input from user
+sentence = input("Enter a sentence: ")
+
+# Calculate statistics
+total_with_spaces = len(sentence)
+total_without_spaces = len(sentence.replace(" ", ""))
+word_count = len(sentence.split())
+vowel_count = sum(1 for char in sentence.lower() if char in "aeiou")
+uppercase_version = sentence.upper()
+lowercase_version = sentence.lower()
+reversed_sentence = sentence[::-1]
+starts_with_capital = sentence[0].isupper() if sentence else False
+ends_with_punctuation = sentence[-1] in ".!?" if sentence else False
+
+# Display results
+print(f"\n{'='*20} TEXT ANALYZER {'='*20}")
+print("-- Analysis Results --")
+print(f"Total characters (with spaces):  {total_with_spaces}")
+print(f"Total characters (without spaces): {total_without_spaces}")
+print(f"Number of words:                 {word_count}")
+print(f"Number of vowels:                {vowel_count}")
+print(f"\nUppercase version:               {uppercase_version}")
+print(f"Lowercase version:               {lowercase_version}")
+print(f"Reversed:                        {reversed_sentence}")
+print(f"\nStarts with capital:             {'Yes' if starts_with_capital else 'No'}")
+print(f"Ends with punctuation:           {'Yes' if ends_with_punctuation else 'No'}")

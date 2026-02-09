@@ -1,0 +1,30 @@
+"""
+User Profile Generator
+CS1300 HW2 - Problem 1
+"""
+
+# Get user input - these are PROMPTS (questions), not answers
+first_name = input("Enter your first name: ")
+last_name = input("Enter your last name: ")
+birth_year = input("Enter your birth year: ")
+hobby = input("Enter your favorite hobby: ")
+
+# Convert names to proper title case
+first_name = first_name.title()
+last_name = last_name.title()
+
+# Calculate age (current year is 2026)
+age = 2026 - int(birth_year)
+
+# Create decorative border
+border = "=" * 30
+
+# Display formatted profile card
+print(f"\n{border}")
+print("       USER PROFILE CARD")
+print(f"{border}")
+print(f"Name:  {first_name} {last_name}")
+print(f"Age:   {age}")
+print(f"Hobby: {hobby}")
+print(f"{border}")
+print("Thank you for creating your profile!")
