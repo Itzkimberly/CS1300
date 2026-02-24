@@ -1,0 +1,28 @@
+# Problem 1: Boolean Expression Evaluator
+# Demonstrates chained comparisons and De Morgan's Law
+
+def main():
+    # Get three integer inputs from user
+    a = int(input("Enter value for a: "))
+    b = int(input("Enter value for b: "))
+    c = int(input("Enter value for c: "))
+    
+    # Evaluate three boolean expressions
+    expr1 = a < b < c  # Chained comparison
+    expr2 = not (a > b or b > c)  # De Morgan's candidate
+    expr3 = a <= b and b <= c  # Equivalent to De Morgan's result?
+    
+    # Print results
+    print(f"a < b < c : {expr1}")
+    print(f"not (a > b or b > c) : {expr2}")
+    print(f"a <= b and b <= c : {expr3}")
+    
+    # Verify De Morgan's Law
+    if expr2 == expr3:
+     print("De Morgan's confirmed: Expressions 2 and 3 match!")
+    else:
+        print("De Morgan's NOT confirmed: Expressions differ!")
+
+if __name__ == "__main__":
+    main()
+    

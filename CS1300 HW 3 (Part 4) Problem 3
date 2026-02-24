@@ -1,0 +1,69 @@
+# Problem 3: Student Grade Report
+# Demonstrates complex if-elif-else chains for grading
+
+def get_letter_grade(avg):
+    """Convert numeric average to letter grade."""
+    if avg >= 90:
+        return "A"
+    elif avg >= 87:
+        return "A-"
+    elif avg >= 83:
+        return "B+"
+    elif avg >= 80:
+        return "B"
+    elif avg >= 77:
+        return "B-"
+    elif avg >= 73:
+        return "C+"
+    elif avg >= 70:
+        return "C"
+    elif avg >= 67:
+        return "C-"
+    elif avg >= 63:
+        return "D+"
+    elif avg >= 60:
+        return "D"
+    else:
+        return "F"
+
+def get_standing(avg):
+    """Determine academic standing based on average."""
+    if avg >= 90:
+        return "Dean's List"
+    elif avg >= 70:
+        return "Good Standing"
+    elif avg >= 60:
+        return "Academic Probation"
+    else:
+        return "Academic Suspension Warning"
+
+def main():
+    # Collect student information
+    name = input("Enter student name: ")
+    exam1 = int(input("Enter Exam 1 score: "))
+    exam2 = int(input("Enter Exam 2 score: "))
+    exam3 = int(input("Enter Exam 3 score: "))
+    
+    # Calculate average
+    average = (exam1 + exam2 + exam3) / 3
+    
+    # Determine grade and standing
+    letter_grade = get_letter_grade(average)
+    status = get_standing(average)
+    
+    # Print formatted report
+    print("=" * 28)
+    print("STUDENT GRADE REPORT")
+    print("=" * 28)
+    print(f"Student: {name}")
+    print(f"Exam 1: {exam1}")
+    print(f"Exam 2: {exam2}")
+    print(f"Exam 3: {exam3}")
+    print("-" * 28)
+    print(f"Average: {average:.2f}")
+    print(f"Grade: {letter_grade}")
+    print(f"Status: {status}")
+    print("=" * 28)
+
+if __name__ == "__main__":
+    main()

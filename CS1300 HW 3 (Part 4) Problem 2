@@ -1,0 +1,36 @@
+# Problem 2: Weather Advisory System
+# Demonstrates if-elif-else chains with nested conditions
+
+def main():
+    # Get user inputs
+    temp = int(input("Enter current temperature (°F): "))
+    raining = input("Is it raining? (yes/no): ").strip().lower()
+    
+    is_raining = (raining == "yes")
+    
+    # Determine advisory based on temperature and rain
+    # Order matters: check highest temps first
+    if temp > 100:
+        # Extreme heat takes precedence regardless of rain
+        print("EXTREME HEAT WARNING: Stay indoors!")
+    elif temp > 85:
+        # Hot conditions - rain matters
+        if is_raining:
+            print("Warm rain — watch for flash floods.")
+        else:
+            print("Hot and dry — stay hydrated.")
+    elif temp >= 60:  # 60-85 range
+        # Moderate temps - rain matters
+        if is_raining:
+            print("Grab an umbrella!")
+        else:
+            print("Nice weather — enjoy your day!")
+    elif temp >= 32:  # 32-59 range
+        # Cold but above freezing
+        print("It's cold — bundle up!")
+    else:
+        # Below freezing
+        print("FREEZE WARNING: Roads may be icy!")
+
+if __name__ == "__main__":
+    main()
