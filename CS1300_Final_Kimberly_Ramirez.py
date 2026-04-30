@@ -1,24 +1,9 @@
 # CS1300_Final_Kimberly_Ramirez.py
 # Mock Final Exam Solutions
 
-# PROBLEM 1 — Compound Interest Calculator
-
-def problem1():
-    """Interactive compound interest calculator."""
-    principal = float(input("Principal: "))
-    rate = float(input("Rate (%): "))
-    years = int(input("Years: "))
-
-    balance = principal
-    for year in range(1, years + 1):
-        balance = balance * (1 + rate / 100)
-        print(f"Year {year}: ${balance:.2f}")
-
-    total_interest = balance - principal
-    print(f"Total interest earned: ${total_interest:.2f}")
-
+# ============================================================
 # PROBLEM 2 — Caesar Cipher Encoder
-
+# ============================================================
 def caesar_encode(text, shift):
     """Returns a Caesar cipher encoded string preserving case."""
     result = ""
@@ -36,8 +21,10 @@ def caesar_encode(text, shift):
             result += ch
     return result
 
-# PROBLEM 3 — Matrix Transpose
 
+# ============================================================
+# PROBLEM 3 — Matrix Transpose
+# ============================================================
 def transpose(matrix):
     """Returns the transpose of a rectangular 2D list."""
     rows = len(matrix)
@@ -53,8 +40,10 @@ def transpose(matrix):
 
     return result
 
-# PROBLEM 4 — Tic-Tac-Toe Winner Checker
 
+# ============================================================
+# PROBLEM 4 — Tic-Tac-Toe Winner Checker
+# ============================================================
 def check_winner(board):
     """Checks a 3x3 board and returns 'X', 'O', 'Draw', or 'Ongoing'."""
     # Check horizontal rows
@@ -81,63 +70,6 @@ def check_winner(board):
             return "Ongoing"
 
     return "Draw"
-
-# PROBLEM 5 — Simple Expense Tracker
-
-def problem5():
-    """Interactive expense tracker using parallel lists."""
-    descriptions = []
-    amounts = []
-
-    while True:
-        print("\n1. Add expense")
-        print("2. View all expenses")
-        print("3. Total spent")
-        print("4. Largest expense")
-        print("5. Remove expense (by number)")
-        print("6. Quit")
-
-        choice = input("Choice: ")
-
-        if choice == "1":
-            desc = input("Description: ")
-            amount = float(input("Amount: "))
-            if amount >= 0:
-                descriptions.append(desc)
-                amounts.append(amount)
-
-        elif choice == "2":
-            if not descriptions:
-                print("No expenses recorded.")
-            else:
-                for i in range(len(descriptions)):
-                    print(f"{i + 1}. {descriptions[i]}: ${amounts[i]:.2f}")
-
-        elif choice == "3":
-            total = sum(amounts)
-            print(f"Total: ${total:.2f}")
-
-        elif choice == "4":
-            if not amounts:
-                print("No expenses to compare.")
-            else:
-                max_idx = amounts.index(max(amounts))
-                print(f"Largest: {descriptions[max_idx]} (${amounts[max_idx]:.2f})")
-
-        elif choice == "5":
-            num = int(input("Number to remove: "))
-            if 1 <= num <= len(descriptions):
-                descriptions.pop(num - 1)
-                amounts.pop(num - 1)
-            else:
-                print("Invalid number.")
-
-        elif choice == "6":
-            print("Goodbye!")
-            break
-
-        else:
-            print("Invalid choice.")
 
 
 # ============================================================
@@ -171,7 +103,3 @@ if __name__ == "__main__":
 
     board4 = [["X", "O", " "], [" ", "X", " "], [" ", " ", " "]]
     print(check_winner(board4))  # Ongoing
-
-    # --- Uncomment ONE of the following for interactive problems ---
-    # problem1()   # Run Problem 1 (Compound Interest)
-    # problem5()   # Run Problem 5 (Expense Tracker)
